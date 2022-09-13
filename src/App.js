@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { UserProvider } from './context/user-context'
+import { UserDataDisplay, UserSettings } from './screens/user-profile'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        minHeight: 350,
+        width: 300,
+        backgroundColor: '#ddd',
+        borderRadius: 4,
+        padding: 10
+      }}
+    >
+      <UserProvider>
+        <UserSettings />
+        <UserDataDisplay />
+      </UserProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
